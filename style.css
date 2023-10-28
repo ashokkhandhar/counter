@@ -1,0 +1,37 @@
+body{
+    background-color: rgb(198, 221, 248);
+    text-align: center;
+}
+h1{
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 50px;
+    margin-top: 10%;
+    color: cadetblue;
+}
+#c{
+    font-family:'Times New Roman', Times, serif;
+    font-size:90px;
+    margin: 40px;
+}
+
+.btn{
+    background-color: #008CBA;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    padding: 10px 22px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 18px;
+}
+
+#i{
+    background-color: #4CAF50;
+}
+#d{
+    background-color: #f44336;
+}
+#r{
+    background-color: #555555;
+}
