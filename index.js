@@ -1,35 +1,32 @@
-const counter = document.getElementById('c');
-var decrease = document.getElementById('d');
-var reset = document.getElementById('r');
-var increase = document.getElementById('i');
+const value = document.querySelector("#value");
+const btns = document.querySelectorAll(".btn");
+var count = 0;
 
-let c = 0;
+btns.forEach((btn) => {
+    btn.addEventListener('click', function(e){
+        const styles = e.currentTarget.classList;
 
-counter.innerHTML = c;
-
-increase.addEventListener('click', function(){
-    counter.textContent = ++c;
-    if(c > 0) counter.style.color = "green";
-    else if(c == 0) counter.style.color = "black";
+        if (styles.contains("decrease")) count--;
+        else if (styles.contains("increase")) count++;
+        else count = 0;
+        colorStyling(count);
+        value.textContent = count;
+    });
 });
-decrease.addEventListener('click', function(){
-    counter.textContent = --c;
-    if(c < 0) counter.style.color = "red";
-    else if(c == 0) counter.style.color = "black";
-});
-reset.addEventListener('click', function(){
-    c = 0;
-    counter.textContent = c;
-    counter.style.color = "black";
-});
-
+function colorStyling(count){
+    if (count > 0) value.style.color = "green";
+    if (count < 0) value.style.color = "red";
+    if (count === 0) value.style.color = "black";
+}
 document.addEventListener('keyup', (event) => {
     if (event.key === '+'){
-        counter.textContent = ++c;
+        value.textContent = ++count;
+        colorStyling(count);
     }
- }, false);
+}, false);
 document.addEventListener('keyup', (event) => {
     if (event.key === '-'){
-        counter.textContent = --c;
+        value.textContent = --count;
+        colorStyling(count);
     }
  }, false);
