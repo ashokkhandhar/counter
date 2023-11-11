@@ -22,3 +22,14 @@ reset.addEventListener('click', function(){
     counter.textContent = c;
     counter.style.color = "black";
 });
+
+document.addEventListener('keyup', (event) => {
+    if (event.key === '+'){
+        counter.textContent = ++c;
+    }
+ }, false);
+document.addEventListener('keyup', (event) => {
+    if (event.key === '-'){
+        counter.textContent = --c;
+    }
+ }, false);
